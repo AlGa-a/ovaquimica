@@ -2,64 +2,103 @@
 
 html, body, #app { width:100%; height:100%; margin:0; padding:0; }
 
+/* ════════════════════════════════════
+   VARIABLES DE TEMA
+   Light = default | Dark = [data-theme="dark"]
+════════════════════════════════════ */
 :root {
-  --bg:          #0B0620;
-  --surface:     #140B33;
-  --surface-2:   #1C1040;
-  --surface-3:   #241452;
-  --border:      rgba(124,58,237,0.22);
-  --border-soft: rgba(124,58,237,0.10);
-  --text:        #F1F5F9;
-  --text-2:      #C4B5FD;
-  --text-muted:  #8B7BAF;
-  --primary:     #7C3AED;
-  --teal:        #00C8B4;
-  --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
-  --ease-smooth: cubic-bezier(0.4,0,0.2,1);
+  /* Fondos */
+  --bg:           #FFFFFF;
+  --bg-alt:       #F8F7FF;
+  --surface:      #FFFFFF;
+  --surface-2:    #F9FAFB;
+  --surface-3:    #F3F4F6;
+
+  /* Bordes */
+  --border:       #E5E7EB;
+  --border-soft:  #F3F4F6;
+  --border-focus: #D8B4FE;
+
+  /* Texto */
+  --text:         #1E1B4B;
+  --text-2:       #4B5563;
+  --muted:        #6B7280;
+
+  /* Colores */
+  --primary:      #6B21A8;
+  --primary-l:    #9333EA;
+  --primary-soft: #F3E8FF;
+  --primary-bd:   #D8B4FE;
+  --teal:         #00C8B4;
+
+  /* Sombras */
+  --shadow-sm:    0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:    0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg:    0 8px 24px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.05);
+
+  /* Animaciones */
+  --ease-spring:  cubic-bezier(0.34,1.56,0.64,1);
+  --ease-smooth:  cubic-bezier(0.4,0,0.2,1);
   --t-fast:   150ms var(--ease-smooth);
   --t-medium: 220ms var(--ease-smooth);
 
-  /* Espaciado responsive */
-  --page-px: clamp(12px, 4vw, 28px);
-  --page-py: clamp(16px, 3vw, 24px);
-
-  /* Tipografía fluida */
-  --fs-xs:   clamp(0.55rem, 1.5vw, 0.65rem);
-  --fs-sm:   clamp(0.72rem, 2vw, 0.82rem);
-  --fs-md:   clamp(0.82rem, 2.2vw, 0.92rem);
-  --fs-lg:   clamp(0.95rem, 2.5vw, 1.1rem);
-  --fs-xl:   clamp(1.2rem, 3.5vw, 1.6rem);
-  --fs-2xl:  clamp(1.5rem, 5vw, 2rem);
-  --fs-hero: clamp(1.4rem, 6vw, 1.8rem);
+  /* Espaciado */
+  --page-px: clamp(14px,4vw,28px);
 }
 
-/* ── Cards ── */
-.v-card {
-  transition: transform var(--t-medium), box-shadow var(--t-medium) !important;
-  border: 1px solid var(--border) !important;
-}
-@media (hover:hover) {
-  .v-card:hover { transform: translateY(-2px); }
+/* ── MODO OSCURO ── */
+[data-theme="dark"] {
+  --bg:           #0B0620;
+  --bg-alt:       #0D0825;
+  --surface:      #140B33;
+  --surface-2:    #1C1040;
+  --surface-3:    #241452;
+  --border:       rgba(124,58,237,0.22);
+  --border-soft:  rgba(124,58,237,0.10);
+  --border-focus: rgba(124,58,237,0.6);
+  --text:         #F1F5F9;
+  --text-2:       #C4B5FD;
+  --muted:        #8B7BAF;
+  --primary:      #9333EA;
+  --primary-l:    #A855F7;
+  --primary-soft: rgba(124,58,237,0.15);
+  --primary-bd:   rgba(124,58,237,0.4);
+  --shadow-sm:    0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md:    0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg:    0 8px 32px rgba(0,0,0,0.5);
 }
 
-/* ── Botones ── */
-.v-btn { transition: transform var(--t-fast), box-shadow var(--t-fast) !important; }
-@media (hover:hover) {
-  .v-btn:hover  { transform: translateY(-1px); }
+/* ════════════════════════════════════
+   VUETIFY OVERRIDES
+════════════════════════════════════ */
+.v-application { background: var(--bg) !important; }
+.v-card        { border: 1px solid var(--border) !important; }
+.v-expansion-panel,
+.v-expansion-panel-title,
+.v-expansion-panel-text {
+  background: var(--surface) !important;
+  color: var(--text) !important;
 }
+.v-navigation-drawer__scrim {
+  background: rgba(0,0,0,0.55) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* ════════════════════════════════════
+   TRANSICIONES GLOBALES
+════════════════════════════════════ */
+.v-card { transition: transform var(--t-medium), box-shadow var(--t-medium) !important; }
+@media (hover:hover) { .v-card:hover { transform: translateY(-2px); } }
+.v-btn { transition: transform var(--t-fast) !important; }
+@media (hover:hover) { .v-btn:hover { transform: translateY(-1px); } }
 .v-btn:active { transform: scale(0.97) !important; }
+.v-progress-linear__determinate { transition: width .8s var(--ease-smooth) !important; }
 
-/* ── Progress ── */
-.v-progress-linear__determinate {
-  transition: width 0.8s var(--ease-smooth) !important;
-}
-
-/* ── Expansion panels ── */
-.v-expansion-panel { background: var(--surface) !important; border: 1px solid var(--border) !important; }
-
-/* ── Animaciones ── */
+/* ════════════════════════════════════
+   ANIMACIONES
+════════════════════════════════════ */
 @keyframes fadeSlideUp {
-  from { opacity:0; transform:translateY(14px); }
+  from { opacity:0; transform:translateY(12px); }
   to   { opacity:1; transform:translateY(0); }
 }
 .stagger-item { animation: fadeSlideUp .35s var(--ease-smooth) both; }
@@ -70,33 +109,14 @@ html, body, #app { width:100%; height:100%; margin:0; padding:0; }
 }
 .progress-shine {
   position:absolute; top:0; left:-100%; width:60%; height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
-  animation:progressShine 2.5s ease-in-out infinite;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);
+  animation: progressShine 2.5s ease-in-out infinite;
   pointer-events:none;
 }
 
-/* ── Touch targets (mínimo 44px) ── */
-button, a { min-height: 36px; }
-@media (max-width:600px) {
-  button, a { min-height: 44px; }
-}
-
-/* ── Vuetify overrides ── */
-.v-application { background: var(--bg) !important; }
-.v-navigation-drawer { background: var(--surface) !important; }
-.v-app-bar   { background: var(--surface) !important; }
-.v-footer    { background: var(--surface) !important; }
-.v-expansion-panel-title,
-.v-expansion-panel-text { background: var(--surface) !important; }
-
-/* ── Overlay backdrop en móvil ── */
-.v-navigation-drawer__scrim {
-  background: rgba(0,0,0,0.65) !important;
-  backdrop-filter: blur(4px);
-}
-
-/* ── Scrollbar estilizado ── */
-::-webkit-scrollbar { width: 5px; height: 5px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: rgba(124,58,237,0.4); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(124,58,237,0.7); }
+/* ════════════════════════════════════
+   SCROLLBAR
+════════════════════════════════════ */
+::-webkit-scrollbar { width:5px; height:5px; }
+::-webkit-scrollbar-track { background: var(--bg-alt); }
+::-webkit-scrollbar-thumb { background: var(--primary-bd); border-radius:3px; }
