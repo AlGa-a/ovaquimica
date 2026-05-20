@@ -56,7 +56,7 @@ const navigate = (path) => {
       <!-- Header del drawer -->
       <div class="dw-header">
         <div class="dw-logo-wrap">
-          <img src="/logo-qumitic.png" alt="QUMITIC" class="dw-logo" />
+          <img src="/logo-qumitic.png" alt="QUIMITIC" class="dw-logo" />
           <div class="dw-logo-glow"></div>
         </div>
         <div class="dw-brand">QUMITIC</div>

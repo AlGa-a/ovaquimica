@@ -45,7 +45,7 @@ const stats = [
 
       <div class="brand">
         <div class="logo-wrap">
-          <img src="/logo-quimitic.png" alt="QUIMITIC" class="logo-img" />
+          <img src="/logo-qumitic.png" alt="QUIMITIC" class="logo-img" />
           <div class="logo-ring"></div>
         </div>
         <h1 class="brand-name">QUIMITIC</h1>
