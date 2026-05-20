@@ -59,7 +59,7 @@ const navigate = (path) => {
           <img src="/logo-qumitic.png" alt="QUIMITIC" class="dw-logo" />
           <div class="dw-logo-glow"></div>
         </div>
-        <div class="dw-brand">QUMITIC</div>
+        <div class="dw-brand">QUIMITIC</div>
         <div class="dw-course">Soluciones Químicas</div>
       </div>
 
