@@ -17,16 +17,16 @@ onMounted(() => {
 const year = new Date().getFullYear()
 
 const integrantes = [
-  { nombre:'Almis Ramírez',      rol:'Desarrolladora Frontend',    correo:'correo@correo.unicordoba.edu.co', ini:'A' },
-  { nombre:'Kiara Corena',       rol:'Diseñadora Instruccional',   correo:'correo@correo.unicordoba.edu.co', ini:'K' },
-  { nombre:'Fernando Urrutia',   rol:'Desarrollador Frontend',     correo:'correo@correo.unicordoba.edu.co', ini:'F' },
-  { nombre:'Sarela Altamiranda', rol:'Diseñadora de Contenido',    correo:'correo@correo.unicordoba.edu.co', ini:'S' },
+  { nombre:'Almis Ramírez',      rol:'Desarrolladora Frontend',    correo:'adavidramirez@correo.unicordoba.edu.co', ini:'A' },
+  { nombre:'Kiara Corena',       rol:'Diseñadora Instruccional',   correo:'kcorena@correo.unicordoba.edu.co', ini:'K' },
+  { nombre:'Fernando Urrutia',   rol:'Desarrollador Frontend',     correo:'furrutia@correo.unicordoba.edu.co', ini:'F' },
+  { nombre:'Sarela Altamiranda', rol:'Diseñadora de Contenido',    correo:'saltamirandas@correo.unicordoba.edu.co', ini:'S' },
 ]
 
 const asesor = {
   nombre: 'Luis Alberto Chica Espitia',
   rol:    'Docente Asesor — Química Inorgánica',
-  correo: 'correo@correo.unicordoba.edu.co',
+  correo: 'Luischica47@hotmail.com',
 }
 
 const datosAcademicos = [
@@ -72,14 +72,14 @@ const tecnologias = ['Vue 3', 'Vuetify 3', 'VueUse', 'Vite', 'Vue Router']
           </a>
           <div class="logos-divider"></div>
           <div class="logo-qumitic-wrap">
-            <img src="/logo-qumitic.png" alt="QUMITIC" class="logo-qumitic" />
+            <img src="/logo-qumitic.png" alt="QUIMITIC" class="logo-qumitic" />
             <div class="logo-qumitic-glow"></div>
           </div>
         </div>
 
         <!-- Títulos -->
         <div class="footer-brand-info">
-          <h2 class="footer-ova-name">QUMITIC</h2>
+          <h2 class="footer-ova-name">QUIMITIC</h2>
           <p class="footer-ova-sub">Objeto Virtual de Aprendizaje · Soluciones Químicas</p>
           <div class="footer-uni-name">
             <NavIcon name="info" :size="12" style="color:#C4B5FD;flex-shrink:0;" />
@@ -216,7 +216,7 @@ const tecnologias = ['Vue 3', 'Vuetify 3', 'VueUse', 'Vite', 'Vue Router']
           <img src="/logounicor.png" alt="Unicórdoba" class="fb-uni-logo"
             onerror="this.style.display='none'" />
           <div class="fb-copy">
-            <span>© {{ year }} QUMITIC</span>
+            <span>© {{ year }} QUIMITIC</span>
             <span class="fb-sep">·</span>
             <span>Universidad de Córdoba</span>
             <span class="fb-sep">·</span>

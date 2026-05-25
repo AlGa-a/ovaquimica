@@ -120,3 +120,19 @@ html, body, #app { width:100%; height:100%; margin:0; padding:0; }
 ::-webkit-scrollbar { width:5px; height:5px; }
 ::-webkit-scrollbar-track { background: var(--bg-alt); }
 ::-webkit-scrollbar-thumb { background: var(--primary-bd); border-radius:3px; }
+
+
+.v-main__wrap {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.cont-root,
+.act-root,
+.eval-root,
+.sim-root,
+.rec-root,
+.cred-root {
+  min-height: unset !important;
+  flex: 1;
+}

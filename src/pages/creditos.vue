@@ -14,7 +14,7 @@ const equipo = [
     nombre:      'Kiara Corena',
     rol:         'Diseñadora Instruccional',
     descripcion: 'Estructura pedagógica, secuencia de aprendizaje y actividades evaluativas.',
-    foto:        null,
+    foto:        '/kiara.jpg',
     color:       '#6D5BA3',
     gradiente:   'linear-gradient(135deg, #6D5BA3, #9333EA)',
   },
@@ -66,7 +66,7 @@ const iniciales = (nombre) => nombre.split(' ').map(n => n[0]).join('').slice(0,
       <v-chip color="primary" variant="tonal" size="small" class="mb-2">Créditos</v-chip>
       <h1 class="cred-title">Equipo de desarrollo</h1>
       <p class="cred-desc">
-        QUMITIC fue construido por estudiantes de la Universidad de Córdoba como proyecto
+        QUIMITIC fue construido por estudiantes de la Universidad de Córdoba como proyecto
         académico orientado a mejorar la comprensión de las soluciones químicas en
         educación superior.
       </p>
@@ -151,7 +151,7 @@ const iniciales = (nombre) => nombre.split(' ').map(n => n[0]).join('').slice(0,
         <div class="asesor-rol">{{ asesor.rol }}</div>
         <div class="dev-inst mt-1">
           <NavIcon name="info" :size="11" style="color:#94A3B8;" />
-          Universidad de Córdoba
+          IE. Marceliano Polo
         </div>
         <p class="asesor-desc">{{ asesor.descripcion }}</p>
       </div>

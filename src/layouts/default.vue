@@ -189,14 +189,16 @@ const navigate = (path) => {
 
     <!-- ══ MAIN ══ -->
     <v-main class="ova-main">
-      <router-view v-slot="{ Component, route: r }">
-        <v-fade-transition mode="out-in" :duration="180">
-          <component :is="Component" :key="r.path" />
+      <div class="main-wrap"></div>
+        <router-view v-slot="{ Component, route: r }">
+          <v-fade-transition mode="out-in" :duration="180">
+            <component :is="Component" :key="r.path" />
         </v-fade-transition>
       </router-view>
+      <OvaFooter class="d-none d-md-block" />
     </v-main>
 
-    <OvaFooter class="d-none d-md-block" />
+    
 
     <!-- ══ BOTTOM NAV (solo móvil) ══ -->
     <div class="bottom-nav d-flex d-md-none">
